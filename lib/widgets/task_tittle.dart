@@ -6,8 +6,9 @@ class TaskTitle extends  StatelessWidget {
 
   final bool isChecked;
   final String taskTitle;
+  final void Function(bool?) checkboxCallback;
 
-  TaskTitle({this.isChecked = false, required this.taskTitle});
+  TaskTitle({this.isChecked = false, required this.taskTitle, required this.checkboxCallback});
 
   @override
   Widget build(BuildContext context) {
@@ -21,10 +22,7 @@ class TaskTitle extends  StatelessWidget {
       trailing: Checkbox(
         activeColor: Colors.lightBlueAccent,
         value: isChecked,
-        onChanged: (value) {
-
-        },
-        // onChanged: toggleCheckboxState,
+        onChanged: checkboxCallback,
       )
     );
   }
