@@ -23,7 +23,7 @@ class TaskTitle extends  StatelessWidget {
         activeColor: Colors.lightBlueAccent,
         value: isChecked,
         onChanged: checkboxCallback,
-      )
+      ) 
     );
   }
 }
