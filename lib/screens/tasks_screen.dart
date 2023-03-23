@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:todoey/models/task_data.dart';
+import '../models/task.dart';
 import 'add_task_screen.dart';
 
 import '../widgets/tasks_list.dart';
@@ -25,12 +26,10 @@ class TasksScreen extends StatelessWidget {
                   newTask = value;
                 },
                 onTap: () {
-                  // setState(() {
-                  //   tasks.add(Task(name: newTask));
-                  //   Navigator.pop(context);
-                  // });
-                },
-                  ),
+                    Provider.of<TaskData>(context, listen: false).addTask(newTask);
+                    Navigator.pop(context);
+                 },
+              ),
         );
       }, backgroundColor: Colors.lightBlueAccent,
         child: Icon(Icons.add),
