@@ -1,13 +1,11 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:todoey/models/task.dart';
 import 'package:todoey/models/task_data.dart';
 import 'package:todoey/widgets/task_tittle.dart';
 
 
 class TasksList extends StatefulWidget {
-
+  const TasksList({super.key});
 
   @override
   State<TasksList> createState() => _TasksListState();
@@ -31,7 +29,7 @@ class _TasksListState extends State<TasksList> {
                     content: Text(
                       "${task.name} deleted",
                       textAlign: TextAlign.center,
-                      style: TextStyle(
+                      style: const TextStyle(
                         fontSize: 20.0,
                       ),
                     ),
@@ -41,9 +39,9 @@ class _TasksListState extends State<TasksList> {
             },
             background: Container(
               color: Colors.red,
-              padding: EdgeInsets.symmetric(horizontal: 20),
+              padding: const EdgeInsets.symmetric(horizontal: 20),
               alignment: AlignmentDirectional.centerStart,
-              child: Icon(
+              child: const Icon(
                 Icons.delete,
                 color: Colors.white,
               ),

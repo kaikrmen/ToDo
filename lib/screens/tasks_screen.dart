@@ -7,6 +7,8 @@ import 'add_task_screen.dart';
 import '../widgets/tasks_list.dart';
 
 class TasksScreen extends StatelessWidget {
+  const TasksScreen({super.key});
+
 
   @override
   Widget build(BuildContext context) {
@@ -39,14 +41,14 @@ class TasksScreen extends StatelessWidget {
               ),
         );
       }, backgroundColor: Colors.lightBlueAccent,
-        child: Icon(Icons.add),
+        child: const Icon(Icons.add),
       ),
       body: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
             Container(
               padding:
-              EdgeInsets.only(
+              const EdgeInsets.only(
                   top: 45.0,
                   left: 30.0,
                   right: 30.0,
@@ -54,17 +56,17 @@ class TasksScreen extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
-                  CircleAvatar(
+                  const CircleAvatar(
+                    backgroundColor: Colors.white,
+                    radius: 30.0,
                     child: Icon(
                         Icons.list,
                         size: 30.0,
                         color: Colors.lightBlueAccent
                     ),
-                    backgroundColor: Colors.white,
-                    radius: 30.0,
                   ),
-                  SizedBox(height: 10.0),
-                  Text(
+                  const SizedBox(height: 10.0),
+                  const Text(
                       'To-do',
                       style: TextStyle(
                           color: Colors.white,
@@ -73,7 +75,7 @@ class TasksScreen extends StatelessWidget {
                       ),
                   ),
                   Text('${Provider.of<TaskData>(context).taskCount} tasks',
-                      style: TextStyle(
+                      style: const TextStyle(
                           color: Colors.white,
                           fontSize: 18.0),
                   ),
@@ -82,10 +84,10 @@ class TasksScreen extends StatelessWidget {
             ),
             Expanded(
               child: Container(
-                padding: EdgeInsets.symmetric(
+                padding: const EdgeInsets.symmetric(
                     horizontal: 20.0,
                     vertical: 20.0),
-                decoration: BoxDecoration(
+                decoration: const BoxDecoration(
                   color: Colors.white,
                   borderRadius: BorderRadius.only(
                       topLeft: Radius.circular(20.0),

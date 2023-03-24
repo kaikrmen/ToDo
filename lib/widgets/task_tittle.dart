@@ -11,7 +11,7 @@ class TaskTitle extends  StatelessWidget {
 
 
 
-  TaskTitle({this.isChecked = false, required this.taskTitle, required this.checkboxCallback, this.onLongPress});
+  const TaskTitle({super.key, this.isChecked = false, required this.taskTitle, required this.checkboxCallback, this.onLongPress});
 
   @override
   Widget build(BuildContext context) {
@@ -31,12 +31,6 @@ class TaskTitle extends  StatelessWidget {
     );
   }
 }
-
-// (bool? checkboxState) {
-// setState(() {
-// isChecked = checkboxState ?? true;
-// });
-// }
 
 
 
