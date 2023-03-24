@@ -20,15 +20,22 @@ class TasksScreen extends StatelessWidget {
         // slide up botton sheet
         showModalBottomSheet(
           context: context,
+          isScrollControlled: true,
           builder: (context) =>
-              AddTaskScreen(
-                onChanged: (value) {
-                  newTask = value;
-                },
-                onTap: () {
-                    Provider.of<TaskData>(context, listen: false).addTask(newTask);
-                    Navigator.pop(context);
-                 },
+              SingleChildScrollView(
+                child: Container(
+                  padding: EdgeInsets.only(
+                      bottom: MediaQuery.of(context).viewInsets.bottom),
+                  child: AddTaskScreen(
+                    onChanged: (value) {
+                      newTask = value;
+                    },
+                    onTap: () {
+                      Provider.of<TaskData>(context, listen: false).addNewTask(newTask);
+                      Navigator.pop(context);
+                    },
+                  ),
+                )
               ),
         );
       }, backgroundColor: Colors.lightBlueAccent,
